@@ -181,3 +181,22 @@ Get the items in collection
 ```
 db.products.find()
 ```
+
+
+# Troubleshoot [or] check our DB is Running or NOT
+
+### 1. Check the Service is running or Not
+```
+systemctl status catalogue  
+```
+Which says catalogue Status is Active or Not
+### 2. Check the catalogue process is Active or Not
+```
+ps -ef | grep node
+```
+which say your catalogue nnode process is running or not
+### 3. Check the catalogue Port is open or Not 
+```
+netstat -lntp
+```
+it will check your catalogue  8080 port is open or Not {catalogue is using Node.js, Node.js running in 8080 port}
