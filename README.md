@@ -1,2 +1,2 @@
 # Roboshop-catalogue
-catalogue Module for Roboshop
+catalogue Module Code for Roboshop Project
