@@ -3,6 +3,8 @@
 
 Catalogue is a microservice that is responsible for serving the list of items that displays in roboshop application.
 
+## Install NodeJS
+
 **Developer has chosen NodeJs, Check with developer which version of NodeJS is needed.**
 **Developer has set a context that it can work with NodeJS >20**
 
@@ -24,6 +26,7 @@ Install NodeJS
 ```shell 
 dnf install nodejs -y
 ```
+## Create one Application User
 
 Configure the application.
 
@@ -41,14 +44,14 @@ User **roboshop** is a function / daemon user to run the application. Apart from
 
 Also, username **roboshop** has been picked because it more suits to our project name.
 
-We keep application in one standard location. This is a usual practice that runs in the organization.
+## Get the Code
 
+We keep application in one standard location. This is a usual practice that runs in the organization.
 Lets setup an app directory. 
 
 ```shell
 mkdir /app 
 ```
-
 Download the application code to created app directory. 
 
 ```shell
@@ -56,6 +59,7 @@ curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue
 cd /app 
 unzip /tmp/catalogue.zip
 ```
+### Download Dependencies
 
 Every application is developed by development team will have some common softwares that they use as libraries. This application also have the same way of defined dependencies in the application configuration.
 
@@ -65,6 +69,9 @@ Lets download the dependencies.
 cd /app 
 npm install 
 ```
+When you hit npm install => it will read the package.json file and install the mentioned dependencies
+
+### Create systemd service to start Application
 
 We need to setup a new service in **systemd** so `systemctl` can manage this service
 
@@ -108,6 +115,8 @@ Start the service.
 systemctl enable catalogue 
 systemctl start catalogue
 ```
+
+# Load Data into DATABASE
 
 For the application to work fully functional we need to load schema to the Database. Additonally we are going to have master data to be seeded for the applications to work. Here in this case it is list of products we want to sale.
 
